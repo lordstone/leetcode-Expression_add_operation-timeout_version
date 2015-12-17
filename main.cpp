@@ -41,6 +41,16 @@ public:
              arr.insert(arr.end(),addOp.begin(),addOp.end());
          }
          
+         vector<string> minOp = addOperators(num.substr(1), target + first);
+         if(minOp.size() != 0){
+             for(int i = 0; i < minOp.size() ; i ++){
+                 minOp[i] =  num.substr(0,1) + "-" + minOp[i];
+                 
+             }
+             arr.insert(arr.end(),minOp.begin(),minOp.end());
+         }
+         
+         
          return arr;
     }
 };
